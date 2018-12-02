@@ -1,0 +1,10 @@
+{
+    rzx_base: {
+        rzx_apache: {
+            rzx_apache_php_5: null
+            rzx_apache_php_7: {
+                rzx_mysql: null
+            }
+        }
+    }
+}

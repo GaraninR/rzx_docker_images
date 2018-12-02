@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+      rzx_mysql:
+            image: garaninr/rzx_mysql:0.1
+            ports:
+                  - "3306:3306"
+                  - "10023:22"
+                  - "8801:80"
+            volumes:
+                  - /home/raiserzx/oracle_vb_share:/root/share
+                  - /home/raiserzx/oracle_vb_share/mysqldb:/var/lib/mysql
+
+      rzx_apache_php_5:
+            image: garaninr/rzx_apache_php_5:0.1
+            ports:
+                  - "10024:22"
+                  - "8802:80"
+            volumes:
+                  - /home/raiserzx/oracle_vb_share:/root/share
+                  - /home/raiserzx/oracle_vb_share/htdocs2:/srv/www/htdocs
+
+      rzx_apache_php_7:
+            image: garaninr/rzx_apache_php_7:0.1
+            ports:
+                  - "10025:22"
+                  - "8803:80"
+            volumes:
+                  - /home/raiserzx/oracle_vb_share:/root/share
+                  - /home/raiserzx/oracle_vb_share/htdocs3:/srv/www/htdocs

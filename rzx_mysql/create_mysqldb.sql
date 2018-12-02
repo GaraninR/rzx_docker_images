@@ -1,0 +1,10 @@
+UPDATE mysql.user SET host='%' WHERE user='root' AND host='localhost';
+DELETE FROM mysql.user WHERE User <> 'root';
+DELETE FROM mysql.db WHERE Db='test' OR Db='test\_%';
+FLUSH PRIVILEGES;
+CREATE DATABASE dockermysql;
+GRANT ALL ON dockermysql.* TO 'root'@'%' IDENTIFIED BY '123456';
+FLUSH PRIVILEGES;
+USE dockermysql;
+CREATE TABLE readme (id INTEGER, text CHAR(70));
+INSERT INTO readme (id, text) VALUES (1, 'Welcome to RZX MySQL Server (Powered by Docker) v 0.3');

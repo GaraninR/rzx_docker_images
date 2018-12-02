@@ -1,0 +1,1 @@
+docker-compose -f start_compose_ex.yml up -d
